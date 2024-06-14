@@ -1,0 +1,312 @@
+.restaurant {
+  position: relative;
+  flex: 2 2;
+  z-index: 2;
+  background-color: var(--background-color);
+  box-shadow: 4px 0 4px -4px var(--secondary-color);
+}
+
+.imgFood {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-bottom: 48px;
+}
+
+.restaurantLogo {
+  position: absolute;
+  top: -96px;
+  left: 0px;
+  background-color: var(--background-color);
+  border-radius: 16px;
+  height: 80px;
+  width: 80px;
+  border: 1px solid var(--primary-color);
+}
+
+.restaurantInfo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  padding: 0 16px;
+}
+
+.restaurantInfoTop,
+.menuChoice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  gap: 8px;
+  flex: 1 8 auto;
+}
+
+.iconContainer {
+  position: absolute;
+  display: flex;
+  top: 8px;
+  right: 0;
+  width: 72px;
+  height: 32px;
+  gap: 8px;
+}
+
+.bgIcon,
+.bgIcon>a {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--secondary-rgb), 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bgIcon:hover {
+  background-color: rgba(var(--hover-rgb), 1);
+}
+
+.iconContainer img {
+  height: 24px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating a:hover {
+  text-decoration: none;
+}
+
+.rating img {
+  height: 16px;
+}
+
+.deliverInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+}
+
+.deliverInfo img {
+  height: 16px;
+}
+
+.seperator {
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seperator img {
+  height: 8px;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1 8 auto;
+}
+
+.stickySlider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  max-height: 80px;
+  box-shadow: 0 4px 4px -4px var(--secondary-color);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 2;
+  flex: 1 8 auto;
+}
+
+.stickySlider>button {
+  border-radius: 16px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  border: unset;
+  display: none;
+}
+
+.stickySlider>button:hover {
+  background-color: var(--hover-color);
+}
+
+.catSlider {
+  display: flex;
+  height: 24px;
+  margin: 8px 0 8px;
+  gap: 8px;
+  width: 100%;
+  max-width: 800px;
+  flex: 1 8 auto;
+}
+
+#categories {
+  flex: 1 8;
+  width: 160px;
+  display: flex;
+  overflow-x: scroll;
+  gap: 16px;
+}
+
+.bgIconSmall,
+.bgIconSmall>a {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--secondary-rgb), 0.5);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bgIconSmall:hover {
+  background-color: rgba(var(--hover-rgb), 1);
+}
+
+.catSliderIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.sliderItem {
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.sliderItem:hover {
+  text-decoration: underline;
+}
+
+.menuChoice {
+  padding: 16px 0;
+}
+
+.meal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--primary-color);
+  padding: 16px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.menuImg {
+  height: 150px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border: 1px solid var(--primary-color);
+}
+
+.menuChoice h3 {
+  font-size: 24px;
+}
+
+.addFood {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(var(--secondary-rgb), 0.5);
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 700;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.addFood:hover {
+  background-color: rgba(var(--hover-rgb), 1);
+}
+
+.categoriesMenu {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: min-content;
+  height: min-content;
+  border-radius: 16px;
+  z-index: 5;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.containerSearchBar {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  background-color: var(--primary-color);
+  width: 240px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+input[type='search'] {
+  width: 232px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  background-color: var(--background-color);
+  outline: none;
+  padding: 0 16px;
+}
+
+.containerSearchBar button,
+#containerInfo button {
+  position: absolute;
+  right: 16px;
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 240px;
+  margin: 16px;
+  font-size: 12px;
+}
+
+table a {
+  background-color: none;
+  height: auto;
+  width: auto;
+}
+
+tr * {
+  font-size: 12px;
+}
+
+tr td:nth-child(2) {
+  text-align: right;
+}

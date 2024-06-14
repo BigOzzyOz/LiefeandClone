@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YumRun</title>
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/fonts.css">
+  <link rel="stylesheet" href="style/templates.css">
+  <link rel="stylesheet" href="style/menu.css">
+  <link rel="stylesheet" href="style/basket.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="assets/data/restaurant.js"></script>
+  <script src="script/htmlStrings.js"></script>
+  <script src="script/helperFunction.js"></script>
+  <script src="script/script.js"></script>
+</head>
+
+<body onload="render()">
+  <div id="limiter">
+    <header w3-include-html="assets/templates/header.html"></header>
+    <main>
+      <section class="restaurant">
+        <img src="assets/img/pizza-711670_1920.jpg" alt="Image of Food" class="imgFood">
+        <div class="restaurantInfo">
+          <div class="restaurantInfoTop">
+            <img src="assets/img/logo_465x320.png" alt="Restaurant Logo" class="restaurantLogo">
+            <h2>Pizza Avanti</h2>
+            <div class="iconContainer">
+              <div class="bgIcon">
+                <a>
+                  <img src="assets/icons/circle-info-solid.svg" alt="i in circle" id="infoIcon" onclick="renderInfo()">
+                  <div id="containerInfo" class="categoriesMenu d-none"></div>
+                </a>
+
+              </div>
+              <div class="bgIcon" onclick="liked()">
+                <a>
+                  <img src="assets/icons/heart-regular.svg" alt="heart" id="likeIcon">
+                </a>
+              </div>
+            </div>
+            <div class="rating">
+              <img src="assets/icons/star-solid.svg" alt="star">
+              <a href="#">4.4 (200+)</a>
+            </div>
+            <div id="deliverInfo" class="deliverInfo"></div>
+          </div>
+        </div>
+        <div class="menuContainer">
+          <div class="stickySlider">
+            <div class="catSlider">
+              <div class="bgIconSmall">
+                <a>
+                  <div id="containerSearchBar" class="containerSearchBar d-none">
+                    <input type="search" name="searchBar" id="searchBar" onkeydown="searchMenu()">
+                    <button onclick="closeSearch('containerSearchBar')">X</button>
+                  </div>
+                  <img src="assets/icons/magnifying-glass-solid.svg" alt="magnifying_glass" class="catSliderIcon"
+                    onclick="renderSearch()">
+                </a>
+              </div>
+              <div class="bgIconSmall">
+                <a>
+                  <img src="assets/icons/angle-left-solid.svg" alt="arrow_left" class="catSliderIcon"
+                    onclick="moveSlider(-75)">
+                </a>
+              </div>
+              <div id="categories" class="hiddenScroll"></div>
+              <div class="bgIconSmall">
+                <a>
+                  <img src="assets/icons/angle-right-solid.svg" alt="arrow_right" class="catSliderIcon"
+                    onclick="moveSlider(75)">
+                </a>
+              </div>
+              <div class="bgIconSmall">
+                <a id="linkCategoriesMenu">
+                  <ul id="categoriesMenu" class="categoriesMenu d-none" onmouseleave="hideMenu('categoriesMenu')"></ul>
+                  <img src="assets/icons/lines-leaning-solid.svg" alt="category_icon" class="catSliderIcon"
+                    onclick="renderCategoriesMenu()">
+                </a>
+              </div>
+            </div>
+            <button onclick="showBasket()">Warenkorb</button>
+          </div>
+          <div id="menuChoice" class="menuChoice"></div>
+        </div>
+      </section>
+      <section class="basket">
+        <div class="basketTop">
+          <button onclick="hideBasket()">X</button>
+          <h2>Warenkorb</h2>
+          <div class="deliverChoiceContainer">
+            <div class="bgEffect" id="bgEffect"></div>
+            <div id="delivery" class="deliverChoice activate"
+              onclick="deliverOptionsSlider('0%', 'delivery', 'pickup')">
+              <img src="assets/icons/truck-fast-solid.svg" alt="deliver_truck">
+              <div class="basketDeliverInfo">
+                <h4>Lieferung</h4>
+                <p>20-45 min</p>
+              </div>
+            </div>
+            <div id="pickup" class="deliverChoice" onclick="deliverOptionsSlider('100%', 'pickup' , 'delivery')">
+              <img src="assets/icons/hands-holding-circle-solid.svg" alt="hands_holding_bowl">
+              <div class="basketDeliverInfo">
+                <h4>Abholung</h4>
+                <p>15 min</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="basketEmpty" class="basketEmpty d-none">
+          <img src="assets/icons/bag-shopping-solid.svg" alt="bag">
+          <h3>Fülle deinen Warenkorb</h3>
+          <p>Füge einige leckkere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+        </div>
+        <div id="basketFilled" class="basketFilled">
+        </div>
+      </section>
+    </main>
+    <footer w3-include-html="assets/templates/footer.html"></footer>
+  </div>
+  <div id="orderLoading" class="orderLoading d-none"></div>
+</body>
+
+</html>
